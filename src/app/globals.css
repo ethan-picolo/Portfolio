@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Couleurs en canaux RGB pour supporter l'opacité Tailwind (ex: text-ink/70) */
+  --bg: 255 255 255;
+  --surface: 246 246 247;
+  --surface-2: 239 239 241;
+  --ink: 11 11 12;
+  --muted: 107 107 114;
+  --faint: 161 161 170;
+  --line: 233 233 236;
+  --accent: 34 181 115; /* vert "open to work" */
+  --electric: 42 91 255; /* accent électrique ponctuel */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* {
+  border-color: rgb(var(--line));
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: rgb(var(--bg));
+  color: rgb(var(--ink));
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-feature-settings: "ss01", "cv01";
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgb(var(--ink));
+  color: rgb(var(--bg));
+}
+
+/* Scrollbar discrète */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #d4d4d8;
+  border-radius: 999px;
+  border: 3px solid var(--bg);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b8b8bf;
+}
+
+@layer components {
+  /* Bouton principal noir façon "pill" */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded-pill bg-ink px-5 py-3 text-sm font-medium text-bg transition-all duration-300 ease-premium;
+  }
+  .btn-primary:hover {
+    @apply -translate-y-0.5 shadow-[0_12px_30px_-12px_rgba(0,0,0,0.5)];
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 rounded-pill border border-line bg-bg px-5 py-3 text-sm font-medium text-ink transition-all duration-300 ease-premium;
+  }
+  .btn-ghost:hover {
+    @apply -translate-y-0.5 border-ink/20 bg-surface;
+  }
+
+  /* Chip (badge de compétence) */
+  .chip {
+    @apply inline-flex items-center rounded-pill border border-line bg-bg px-3.5 py-1.5 text-sm text-ink/80 transition-colors duration-200;
+  }
+  .chip:hover {
+    @apply border-ink/25 text-ink;
+  }
+
+  .display-title {
+    font-family: var(--font-display), system-ui, sans-serif;
+    letter-spacing: -0.03em;
+    line-height: 0.98;
+  }
+
+  .link-underline {
+    @apply relative inline-flex w-fit items-center gap-1;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.35s var(--ease);
+  }
+  .link-underline:hover {
+    background-size: 100% 1px;
+  }
+}
+
+/* Masque de fondu horizontal pour le carousel */
+.edge-fade {
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Grain / bruit léger pour la profondeur premium */
+.grain::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.028;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
