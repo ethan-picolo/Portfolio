@@ -16,7 +16,7 @@ const jsonLd = {
   name: "Ethan Picolo",
   jobTitle: "Étudiant en Réseaux & Cybersécurité",
   email: `mailto:${contact.email}`,
-  url: "https://ethan-picolo.vercel.app",
+  url: "https://ethan-picolo.github.io/Portfolio",
   address: { "@type": "PostalAddress", addressLocality: "Bry-sur-Marne", addressCountry: "FR" },
   alumniOf: [
     { "@type": "CollegeOrUniversity", name: "EFREI Paris-Panthéon-Assas" },
