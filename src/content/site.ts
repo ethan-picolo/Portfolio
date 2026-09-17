@@ -382,15 +382,14 @@ export const timeline: { label: { fr: string; en: string }; items: TimelineItem[
     {
       kind: "education",
       role: {
-        // TODO — préciser l'intitulé exact du diplôme obtenu au lycée
-        fr: "Formation en informatique",
-        en: "IT program",
+        fr: "Baccalauréat général — NSI & Mathématiques",
+        en: "French Baccalauréat — Computer Science & Mathematics",
       },
       org: "Lycée Polyvalent Louis Armand",
-      period: { fr: "Avant l'EFREI", en: "Before EFREI" },
+      period: { fr: "Sept. 2022 – Juil. 2025", en: "Sep 2022 – Jul 2025" },
       bullets: {
-        fr: ["Premiers pas en développement web : HTML, PHP, MySQL."],
-        en: ["First steps in web development: HTML, PHP, MySQL."],
+        fr: ["Spécialités Numérique et Sciences Informatiques (NSI) et Mathématiques.", "Premiers pas en développement web : HTML, PHP, MySQL."],
+        en: ["Specializing in Computer Science (NSI) and Mathematics.", "First steps in web development: HTML, PHP, MySQL."],
       },
     },
   ],
