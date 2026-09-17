@@ -71,9 +71,9 @@ export const contact = {
   phone: "+33 6 67 83 29 72",
   location: { fr: "Bry-sur-Marne, France", en: "Bry-sur-Marne, France" },
   linkedin: "https://www.linkedin.com/in/ethan-picolo",
-  // TODO — à remplacer par tes vrais liens quand ils existeront
+  calendly: "https://calendly.com/ethan-picolo/30min",
+  // TODO — ajoute ton lien GitHub public quand il sera prêt
   github: "", // ex: "https://github.com/ethan-picolo"
-  calendly: "", // ex: "https://calendly.com/ethan-picolo/meeting"
 };
 
 /* ────────────────────────────────────────────────────────────
@@ -126,13 +126,13 @@ export const about = {
   },
   paragraphs: {
     fr: [
-      "Je suis en deuxième année de Bachelor Réseaux & Cybersécurité à l'EFREI Paris-Panthéon-Assas. J'ai effectué un stage de deux mois au sein du département SSI de la DSI de SPIE France, intégré à l'équipe SecOps.",
-      "Au quotidien, j'y ai travaillé sur l'analyse de phishing et de malware, le traitement d'alertes EDR et SIEM/XDR, la réponse à incident et la gouvernance des accès. J'y ai conçu et développé de façon autonome un script Python d'automatisation de l'analyse de vulnérabilités qui a réduit un traitement de plusieurs heures à quelques minutes.",
+      "Je suis en deuxième année de Bachelor Réseaux & Cybersécurité à l'EFREI Paris-Panthéon-Assas. J'ai effectué un stage au sein du département Sécurité des Systèmes d'Information (SSI) de SPIE ICS, à Cergy, intégré à l'équipe SecOps travaillant avec le SOC.",
+      "Au quotidien, j'y ai travaillé sur l'analyse de courriels suspects et de malware, le traitement d'alertes EDR et SIEM/XDR, la réponse à incident et la gouvernance des accès. J'y ai conçu et développé de façon autonome un script Python d'automatisation de l'analyse de vulnérabilités qui a réduit un traitement de plusieurs heures à quelques minutes.",
       "Rigueur, curiosité et persévérance guident mon travail — des réflexes développés notamment par plusieurs années d'arts martiaux (Penchak Silat, karaté).",
     ],
     en: [
-      "I'm a second-year Networks & Cybersecurity Bachelor student at EFREI Paris-Panthéon-Assas. I completed a two-month internship within SPIE France's information-security department (SSI), embedded in the SecOps team.",
-      "Day to day, I worked on phishing and malware analysis, EDR and SIEM/XDR alert handling, incident response and access governance. I independently designed and built a Python vulnerability-analysis automation script that cut a multi-hour manual process down to a few minutes.",
+      "I'm a second-year Networks & Cybersecurity Bachelor student at EFREI Paris-Panthéon-Assas. I completed an internship within SPIE ICS's information-security department (SSI), in Cergy, embedded in the SecOps team working alongside the SOC.",
+      "Day to day, I worked on suspicious-email and malware analysis, EDR and SIEM/XDR alert handling, incident response and access governance. I independently designed and built a Python vulnerability-analysis automation script that cut a multi-hour manual process down to a few minutes.",
       "Rigor, curiosity and perseverance drive my work — reflexes sharpened by several years of martial arts (Penchak Silat, karate).",
     ],
   },
@@ -279,13 +279,13 @@ export const projects: { label: { fr: string; en: string }; items: Project[] } =
       slug: "vuln-automation",
       tag: { fr: "Python · Sécurité", en: "Python · Security" },
       title: { fr: "Automatisation d'analyse de vulnérabilités", en: "Vulnerability Analysis Automation" },
-      year: "2025",
-      status: { fr: "Stage SPIE — SecOps", en: "SPIE internship — SecOps" },
+      year: "2026",
+      status: { fr: "Stage SPIE ICS — SecOps", en: "SPIE ICS internship — SecOps" },
       description: {
-        fr: "Script Python conçu en autonomie pendant mon stage chez SPIE pour automatiser l'analyse de vulnérabilités : enrichissement des CVE via les API NVD et FIRST, multithreading et mise en cache. Résultat : un traitement de plusieurs heures ramené à quelques minutes.",
-        en: "Python script I built independently during my SPIE internship to automate vulnerability analysis: CVE enrichment through the NVD and FIRST APIs, multithreading and caching. Outcome: a multi-hour process reduced to a few minutes.",
+        fr: "Script Python conçu en autonomie pendant mon stage chez SPIE ICS pour automatiser l'analyse de vulnérabilités : enrichissement d'un référentiel CVE via les API NVD (CVSS) et FIRST (EPSS), multithreading, cache local JSON et export Excel de priorisation. Résultat : un traitement de plusieurs heures ramené à quelques minutes.",
+        en: "Python script I built independently during my SPIE ICS internship to automate vulnerability analysis: enriching a CVE dataset via the NVD (CVSS) and FIRST (EPSS) APIs, multithreading, local JSON caching and a prioritized Excel export. Outcome: a multi-hour process reduced to a few minutes.",
       },
-      tech: ["Python", "NVD API", "FIRST API", "Multithreading", "Caching"],
+      tech: ["Python", "NVD API (CVSS)", "FIRST API (EPSS)", "Multithreading", "JSON cache", "Excel export"],
       accent: "#12233A",
       links: [],
     },
@@ -315,25 +315,30 @@ export const timeline: { label: { fr: string; en: string }; items: TimelineItem[
     {
       kind: "experience",
       role: {
-        fr: "Analyste Cybersécurité — Stagiaire",
-        en: "Cybersecurity Analyst — Intern",
+        fr: "Stagiaire Informatique / Analyste Cybersécurité",
+        en: "IT Intern / Cybersecurity Analyst",
       },
       org: "SPIE ICS — SecOps / SSI",
-      // TODO — préciser les dates exactes du stage
-      period: { fr: "Stage · 2 mois", en: "Internship · 2 months" },
-      location: { fr: "France", en: "France" },
+      period: { fr: "Avr. – Juin 2026", en: "Apr – Jun 2026" },
+      location: { fr: "Cergy · Sur site", en: "Cergy · On-site" },
       bullets: {
         fr: [
-          "Analyse de phishing et de malware au sein de l'équipe SecOps.",
-          "Traitement d'alertes EDR et SIEM/XDR, réponse à incident.",
-          "Gouvernance des accès et suivi de la sécurité opérationnelle.",
-          "Développement autonome d'un script Python d'automatisation (CVE, NVD/FIRST).",
+          "Analyse de courriels suspects : en-têtes (SPF/DKIM, routage, spoofing), URL et pièces jointes en environnement isolé, qualification du verdict et mise en quarantaine.",
+          "Traitement d'alertes EDR et SIEM/XDR : chaîne d'exécution, vérification des hash, règles de détection, croisement des IOC et recherche de propagation.",
+          "Réponse à incident : isolation du poste, documentation des IOC et de la chronologie, transmission à l'équipe de remédiation.",
+          "Gouvernance des accès : audit des connexions VPN tierces et des demandes de droits admin, dans le respect du moindre privilège.",
+          "Script Python d'automatisation des vulnérabilités : enrichissement CVE via les API NVD (CVSS) et FIRST (EPSS), multithreading, cache JSON et export Excel. Heures → minutes.",
+          "Tâches système : installation d'un serveur Windows Server (RAID, IPAM, jonction Active Directory), supervision et sauvegardes.",
+          "Outils : SEKOIA.IO (SIEM/XDR), EDR, VirusTotal, Joe Sandbox, URLScan.io, EasyVista, Active Directory.",
         ],
         en: [
-          "Phishing and malware analysis within the SecOps team.",
-          "EDR and SIEM/XDR alert handling, incident response.",
-          "Access governance and operational-security follow-up.",
-          "Independent development of a Python automation script (CVE, NVD/FIRST).",
+          "Suspicious-email analysis: headers (SPF/DKIM, routing, spoofing), URLs and attachments in an isolated environment, verdict qualification and quarantine.",
+          "EDR and SIEM/XDR alert handling: execution chains, hash verification, detection rules, IOC correlation and propagation hunting.",
+          "Incident response: host isolation, IOC and timeline documentation, handover to the remediation team.",
+          "Access governance: auditing third-party VPN connections and local-admin requests, following least privilege.",
+          "Python vulnerability-automation script: CVE enrichment via the NVD (CVSS) and FIRST (EPSS) APIs, multithreading, JSON caching and Excel export. Hours → minutes.",
+          "Systems tasks: installing a physical Windows Server (RAID, IPAM, Active Directory join), monitoring and backups.",
+          "Tooling: SEKOIA.IO (SIEM/XDR), EDR, VirusTotal, Joe Sandbox, URLScan.io, EasyVista, Active Directory.",
         ],
       },
     },
@@ -357,9 +362,27 @@ export const timeline: { label: { fr: string; en: string }; items: TimelineItem[
       },
     },
     {
+      kind: "experience",
+      role: {
+        fr: "Stagiaire étudiant — Découverte",
+        en: "Student Intern — Discovery",
+      },
+      org: "SPIE ICS",
+      period: { fr: "Déc. 2021", en: "Dec 2021" },
+      location: { fr: "Malakoff, Île-de-France · Sur site", en: "Malakoff, Île-de-France · On-site" },
+      bullets: {
+        fr: [
+          "Stage d'observation : découverte des métiers du numérique (conseil, ingénierie, intégration réseaux) et du département Cybersécurité.",
+        ],
+        en: [
+          "Observation internship: discovering digital-services roles (consulting, engineering, network integration) and the Cybersecurity department.",
+        ],
+      },
+    },
+    {
       kind: "education",
       role: {
-        // TODO — préciser l'intitulé exact du diplôme
+        // TODO — préciser l'intitulé exact du diplôme obtenu au lycée
         fr: "Formation en informatique",
         en: "IT program",
       },

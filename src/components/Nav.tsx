@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useLang, t } from "@/lib/i18n";
-import { nav, ui, contactSection } from "@/content/site";
+import { nav, ui, contactSection, contact } from "@/content/site";
 import { ArrowUpRight, Plus } from "./icons";
 import { Monogram } from "./ui";
 
@@ -32,7 +32,7 @@ export function Nav() {
         initial={{ y: -24, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-        className={`pointer-events-auto w-full max-w-3xl rounded-[26px] border border-line bg-bg/85 backdrop-blur-xl transition-shadow duration-300 ${
+        className={`pointer-events-auto w-full max-w-4xl rounded-[26px] border border-line bg-bg/85 backdrop-blur-xl transition-shadow duration-300 ${
           scrolled ? "shadow-[0_16px_40px_-24px_rgba(0,0,0,0.4)]" : "shadow-[0_6px_24px_-18px_rgba(0,0,0,0.3)]"
         }`}
       >
@@ -40,19 +40,19 @@ export function Nav() {
           {/* Logo + tagline */}
           <a href="#top" className="group flex min-w-0 items-center gap-2.5" aria-label="Ethan Picolo — accueil">
             <Monogram className="h-9 w-9 shrink-0" />
-            <span className="hidden min-w-0 flex-col leading-tight sm:flex">
+            <span className="hidden min-w-0 flex-col leading-tight xl:flex">
               <span className="truncate text-[13px] font-medium text-ink">{t(nav.taglineLine1, lang)}</span>
               <span className="truncate text-[13px] text-muted">{t(nav.taglineLine2, lang)}</span>
             </span>
           </a>
 
           {/* Liens desktop */}
-          <div className="ml-auto hidden items-center gap-1 md:flex">
+          <div className="ml-auto hidden items-center gap-0.5 md:flex">
             {nav.links.map((l) => (
               <a
                 key={l.id}
                 href={`#${l.id}`}
-                className="rounded-pill px-3 py-2 text-sm text-muted transition-colors hover:bg-surface hover:text-ink"
+                className="whitespace-nowrap rounded-pill px-3 py-2 text-sm text-muted transition-colors hover:bg-surface hover:text-ink"
               >
                 {t(l.label, lang)}
               </a>
@@ -61,8 +61,9 @@ export function Nav() {
 
           {/* CTA */}
           <a
-            href="#contact"
-            className="btn-primary ml-auto shrink-0 !py-2.5 !pl-4 !pr-3.5 text-[13px] md:ml-1"
+            href={contact.calendly || "#contact"}
+            {...(contact.calendly ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+            className="btn-primary ml-auto shrink-0 whitespace-nowrap !py-2.5 !pl-4 !pr-3.5 text-[13px] md:ml-1"
           >
             {t(contactSection.callCta, lang)}
             <ArrowUpRight className="h-4 w-4" />
