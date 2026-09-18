@@ -32,8 +32,8 @@ export function Nav() {
         initial={{ y: -24, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-        className={`pointer-events-auto w-full max-w-4xl rounded-[26px] border border-line bg-bg/85 backdrop-blur-xl transition-shadow duration-300 ${
-          scrolled ? "shadow-[0_16px_40px_-24px_rgba(0,0,0,0.4)]" : "shadow-[0_6px_24px_-18px_rgba(0,0,0,0.3)]"
+        className={`glass pointer-events-auto w-full max-w-4xl rounded-[26px] transition-shadow duration-300 ${
+          scrolled ? "shadow-[0_18px_44px_-22px_rgba(15,23,42,0.35)]" : ""
         }`}
       >
         <div className="flex items-center gap-2 p-1.5 pl-2.5">

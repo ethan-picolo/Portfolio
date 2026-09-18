@@ -30,6 +30,9 @@ html {
   html {
     scroll-behavior: auto;
   }
+  .glass-sheen::after {
+    display: none;
+  }
 }
 
 body {
@@ -82,6 +85,66 @@ body {
     @apply border-ink/25 text-ink;
   }
 
+  /* ── Liquid glass ─────────────────────────────────────────────
+     Surface en verre dépoli translucide (frosted glass) avec reflet
+     spéculaire. À poser sur des éléments flottant au-dessus de couleur. */
+  .glass {
+    background:
+      linear-gradient(
+        150deg,
+        rgba(255, 255, 255, 0.72) 0%,
+        rgba(255, 255, 255, 0.42) 48%,
+        rgba(255, 255, 255, 0.58) 100%
+      ),
+      rgba(255, 255, 255, 0.34);
+    -webkit-backdrop-filter: blur(20px) saturate(185%);
+    backdrop-filter: blur(20px) saturate(185%);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow:
+      0 12px 34px -14px rgba(15, 23, 42, 0.22),
+      inset 0 1px 0 rgba(255, 255, 255, 0.9),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.25);
+  }
+  /* Variante sombre : verre sur fond foncé */
+  .glass-dark {
+    background: linear-gradient(150deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.04));
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
+    backdrop-filter: blur(18px) saturate(160%);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow:
+      0 20px 44px -20px rgba(0, 0, 0, 0.55),
+      inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  }
+  /* Interaction : léger soulèvement + reflet renforcé */
+  .glass-hover {
+    transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease), background 0.4s var(--ease);
+  }
+  .glass-hover:hover {
+    transform: translateY(-4px);
+    box-shadow:
+      0 22px 50px -18px rgba(15, 23, 42, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.95),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.3);
+  }
+  /* Reflet spéculaire mobile au survol (bord lumineux qui glisse) */
+  .glass-sheen {
+    position: relative;
+    overflow: hidden;
+  }
+  .glass-sheen::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    background: linear-gradient(115deg, transparent 30%, rgba(255, 255, 255, 0.5) 48%, transparent 62%);
+    transform: translateX(-120%);
+    transition: transform 0.8s var(--ease);
+  }
+  .glass-sheen:hover::after {
+    transform: translateX(120%);
+  }
+
   .display-title {
     font-family: var(--font-display), system-ui, sans-serif;
     letter-spacing: -0.03em;
@@ -99,6 +162,48 @@ body {
   .link-underline:hover {
     background-size: 100% 1px;
   }
+}
+
+/* Fond ambiant : orbes de couleur très diffuses pour que le verre capte
+   des teintes subtiles, sans altérer le fond blanc dominant. */
+.ambient {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  pointer-events: none;
+  overflow: hidden;
+}
+.ambient::before,
+.ambient::after {
+  content: "";
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(90px);
+}
+.ambient::before {
+  width: 44vw;
+  height: 44vw;
+  top: -8vw;
+  right: -6vw;
+  background: radial-gradient(circle, rgba(42, 91, 255, 0.14), transparent 68%);
+}
+.ambient::after {
+  width: 40vw;
+  height: 40vw;
+  bottom: -10vw;
+  left: -8vw;
+  background: radial-gradient(circle, rgba(34, 181, 115, 0.13), transparent 68%);
+}
+.ambient span {
+  position: absolute;
+  top: 42%;
+  left: 46%;
+  width: 34vw;
+  height: 34vw;
+  transform: translate(-50%, -50%);
+  border-radius: 9999px;
+  filter: blur(100px);
+  background: radial-gradient(circle, rgba(150, 120, 255, 0.08), transparent 70%);
 }
 
 /* Masque de fondu horizontal pour le carousel */

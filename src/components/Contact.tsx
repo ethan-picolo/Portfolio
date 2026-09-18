@@ -156,7 +156,7 @@ function ContactForm({ lang }: { lang: "fr" | "en" }) {
 
   return (
     <Reveal>
-      <form onSubmit={onSubmit} className="rounded-card border border-line bg-surface/40 p-6 sm:p-7">
+      <form onSubmit={onSubmit} className="glass rounded-card p-6 sm:p-7">
         <div className="grid gap-3 sm:grid-cols-2">
           <input
             required
@@ -203,7 +203,7 @@ function Faq({ lang }: { lang: "fr" | "en" }) {
     <Reveal delay={0.05}>
       <div>
         <h3 className="mb-4 text-xs uppercase tracking-label text-faint">{t(faq.label, lang)}</h3>
-        <ul className="overflow-hidden rounded-card border border-line">
+        <ul className="glass overflow-hidden rounded-card">
           {faq.items.map((item, i) => {
             const isOpen = open === i;
             return (

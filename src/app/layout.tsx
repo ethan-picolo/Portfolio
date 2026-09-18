@@ -73,6 +73,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="fr" className={`${inter.variable} ${spaceGrotesk.variable}`} suppressHydrationWarning>
       <body className="grain antialiased">
+        <div className="ambient" aria-hidden>
+          <span />
+        </div>
         <LangProvider>{children}</LangProvider>
       </body>
     </html>

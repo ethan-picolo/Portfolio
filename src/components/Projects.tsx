@@ -104,7 +104,7 @@ function ProjectCard({
   const hasLink = project.links && project.links.length > 0 && project.links[0].href;
 
   return (
-    <article className="group flex w-[86vw] shrink-0 snap-start flex-col overflow-hidden rounded-card border border-line bg-bg sm:w-[560px]">
+    <article className="glass glass-hover group flex w-[86vw] shrink-0 snap-start flex-col overflow-hidden rounded-card sm:w-[560px]">
       {/* Visuel */}
       <div className="aspect-[16/11] w-full p-3 sm:p-4">
         <ProjectVisual slug={project.slug} />
