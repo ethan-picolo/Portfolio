@@ -9,15 +9,15 @@ export function Skills() {
   const { lang } = useLang();
 
   return (
-    <Section id="skills" className="bg-surface/40">
+    <Section id="skills">
       <Reveal>
         <SectionLabel>{t(skills.label, lang)}</SectionLabel>
       </Reveal>
 
-      <div className="mt-10 grid gap-px overflow-hidden rounded-card border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
         {skills.groups.map((group, gi) => (
           <Reveal key={t(group.label, lang)} delay={0.05 * gi}>
-            <div className="flex h-full flex-col bg-bg p-6 sm:p-7">
+            <div className="glass glass-hover flex h-full flex-col rounded-card p-6 sm:p-7">
               <h3 className="mb-4 text-xs uppercase tracking-label text-faint">{t(group.label, lang)}</h3>
               <ul className="flex flex-wrap gap-2">
                 {group.items.map((item) => (

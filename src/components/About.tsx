@@ -23,9 +23,9 @@ export function About() {
 
           {/* Faits clés */}
           <Reveal delay={0.1}>
-            <dl className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-card border border-line bg-line">
+            <dl className="mt-10 grid grid-cols-2 gap-2.5">
               {about.facts.map((f) => (
-                <div key={t(f.k, lang)} className="bg-bg p-5">
+                <div key={t(f.k, lang)} className="glass glass-hover rounded-2xl p-5">
                   <dt className="text-xs uppercase tracking-label text-faint">{t(f.k, lang)}</dt>
                   <dd className="mt-1.5 text-[15px] font-medium text-ink">{t(f.v, lang)}</dd>
                 </div>

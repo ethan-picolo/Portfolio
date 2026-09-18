@@ -28,7 +28,7 @@ export function Expertise() {
       </div>
 
       <Reveal delay={0.08}>
-        <ul className="overflow-hidden rounded-card border border-line">
+        <ul className="glass overflow-hidden rounded-card">
           {expertise.rows.map((row, i) => {
             const Icon = iconMap[row.icon as keyof typeof iconMap] ?? iconMap.shield;
             const isActive = active === row.key;
@@ -37,9 +37,9 @@ export function Expertise() {
                 key={row.key}
                 onMouseEnter={() => setActive(row.key)}
                 onFocus={() => setActive(row.key)}
-                className={`group relative border-line transition-colors duration-300 ${
+                className={`group relative border-white/40 transition-colors duration-300 ${
                   i !== 0 ? "border-t" : ""
-                } ${isActive ? "bg-surface" : "bg-bg hover:bg-surface/60"}`}
+                } ${isActive ? "bg-white/45" : "hover:bg-white/25"}`}
               >
                 <div className="flex items-center gap-4 px-5 py-6 sm:px-7">
                   <span

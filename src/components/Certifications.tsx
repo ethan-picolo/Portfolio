@@ -9,7 +9,7 @@ export function Certifications() {
   const { lang } = useLang();
 
   return (
-    <Section id="certifications" className="bg-surface/40">
+    <Section id="certifications">
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
           <Reveal>
@@ -28,10 +28,10 @@ export function Certifications() {
         </Reveal>
       </div>
 
-      <div className="mt-10 grid gap-px overflow-hidden rounded-card border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-10 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-3">
         {certifications.items.map((c, i) => (
           <Reveal key={c.name + i} delay={0.03 * i}>
-            <div className="group flex h-full items-start justify-between gap-3 bg-bg p-5 transition-colors hover:bg-surface/60">
+            <div className="glass glass-hover group flex h-full items-start justify-between gap-3 rounded-2xl p-5">
               <div className="min-w-0">
                 <h3 className="text-[15px] font-medium text-ink">{c.name}</h3>
                 <p className="mt-1 text-sm text-muted">{c.issuer}</p>
