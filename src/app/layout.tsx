@@ -1,0 +1,92 @@
+import type { Metadata, Viewport } from "next";
+import { Inter, Space_Grotesk } from "next/font/google";
+import { LangProvider } from "@/lib/i18n";
+import "./globals.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+  weight: ["500", "600", "700"],
+});
+
+const SITE_URL = "https://ethan-picolo.github.io/Portfolio"; // TODO — remplacer si tu ajoutes un domaine perso
+
+export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Ethan Picolo — Cybersécurité & Réseaux",
+    template: "%s · Ethan Picolo",
+  },
+  description:
+    "Ethan Picolo — étudiant en Bachelor Cybersécurité & Réseaux à l'EFREI Paris-Panthéon-Assas. Analyse de menaces, réponse à incident, automatisation Python. En recherche de stage.",
+  keywords: [
+    "Ethan Picolo",
+    "cybersécurité",
+    "cybersecurity",
+    "réseaux",
+    "SecOps",
+    "EDR",
+    "SIEM",
+    "Python",
+    "EFREI",
+    "stage cybersécurité",
+    "alternance cybersécurité",
+  ],
+  authors: [{ name: "Ethan Picolo" }],
+  creator: "Ethan Picolo",
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    alternateLocale: "en_US",
+    url: SITE_URL,
+    title: "Ethan Picolo — Cybersécurité & Réseaux",
+    description:
+      "Étudiant en Cybersécurité & Réseaux à l'EFREI. Analyse de menaces, réponse à incident, automatisation Python.",
+    siteName: "Ethan Picolo",
+    images: [
+      {
+        url: `${SITE_URL}/og.png`,
+        width: 1200,
+        height: 630,
+        alt: "Ethan Picolo — Cybersécurité & Réseaux",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ethan Picolo — Cybersécurité & Réseaux",
+    description:
+      "Étudiant en Cybersécurité & Réseaux à l'EFREI. Analyse de menaces, réponse à incident, automatisation Python.",
+    images: [`${SITE_URL}/og.png`],
+  },
+  robots: { index: true, follow: true },
+  icons: {
+    icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#ffffff",
+  width: "device-width",
+  initialScale: 1,
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="fr" className={`${inter.variable} ${spaceGrotesk.variable}`} suppressHydrationWarning>
+      <body className="grain antialiased">
+        <div className="ambient" aria-hidden>
+          <span />
+        </div>
+        <LangProvider>{children}</LangProvider>
+      </body>
+    </html>
+  );
+}

@@ -1,0 +1,244 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Couleurs en canaux RGB pour supporter l'opacité Tailwind (ex: text-ink/70) */
+  --bg: 255 255 255;
+  --surface: 246 246 247;
+  --surface-2: 239 239 241;
+  --ink: 11 11 12;
+  --muted: 107 107 114;
+  --faint: 161 161 170;
+  --line: 233 233 236;
+  --accent: 34 181 115; /* vert "open to work" */
+  --electric: 42 91 255; /* accent électrique ponctuel */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* {
+  border-color: rgb(var(--line));
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .glass-sheen::after {
+    display: none;
+  }
+}
+
+body {
+  background: rgb(var(--bg));
+  color: rgb(var(--ink));
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-feature-settings: "ss01", "cv01";
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgb(var(--ink));
+  color: rgb(var(--bg));
+}
+
+/* Scrollbar discrète */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #d4d4d8;
+  border-radius: 999px;
+  border: 3px solid var(--bg);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b8b8bf;
+}
+
+@layer components {
+  /* Bouton principal noir façon "pill" */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded-pill bg-ink px-5 py-3 text-sm font-medium text-bg transition-all duration-300 ease-premium;
+  }
+  .btn-primary:hover {
+    @apply -translate-y-0.5 shadow-[0_12px_30px_-12px_rgba(0,0,0,0.5)];
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 rounded-pill border border-line bg-bg px-5 py-3 text-sm font-medium text-ink transition-all duration-300 ease-premium;
+  }
+  .btn-ghost:hover {
+    @apply -translate-y-0.5 border-ink/20 bg-surface;
+  }
+
+  /* Chip (badge de compétence) */
+  .chip {
+    @apply inline-flex items-center rounded-pill border border-line bg-bg px-3.5 py-1.5 text-sm text-ink/80 transition-colors duration-200;
+  }
+  .chip:hover {
+    @apply border-ink/25 text-ink;
+  }
+
+  /* ── Liquid glass ─────────────────────────────────────────────
+     Surface en verre dépoli translucide (frosted glass) avec reflet
+     spéculaire. À poser sur des éléments flottant au-dessus de couleur. */
+  .glass {
+    background:
+      linear-gradient(
+        150deg,
+        rgba(255, 255, 255, 0.8) 0%,
+        rgba(255, 255, 255, 0.34) 46%,
+        rgba(255, 255, 255, 0.64) 100%
+      ),
+      rgba(255, 255, 255, 0.24);
+    -webkit-backdrop-filter: blur(26px) saturate(205%);
+    backdrop-filter: blur(26px) saturate(205%);
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    box-shadow:
+      0 18px 44px -16px rgba(15, 23, 42, 0.28),
+      inset 0 1px 0 rgba(255, 255, 255, 0.98),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.32);
+  }
+  /* Variante sombre : verre sur fond foncé */
+  .glass-dark {
+    background: linear-gradient(150deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.04));
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
+    backdrop-filter: blur(18px) saturate(160%);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow:
+      0 20px 44px -20px rgba(0, 0, 0, 0.55),
+      inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  }
+  /* Interaction : léger soulèvement + reflet renforcé */
+  .glass-hover {
+    transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease), background 0.4s var(--ease);
+  }
+  .glass-hover:hover {
+    transform: translateY(-4px);
+    box-shadow:
+      0 22px 50px -18px rgba(15, 23, 42, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.95),
+      inset 0 -1px 0 rgba(255, 255, 255, 0.3);
+  }
+  /* Reflet spéculaire mobile au survol (bord lumineux qui glisse) */
+  .glass-sheen {
+    position: relative;
+    overflow: hidden;
+  }
+  .glass-sheen::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    background: linear-gradient(115deg, transparent 30%, rgba(255, 255, 255, 0.5) 48%, transparent 62%);
+    transform: translateX(-120%);
+    transition: transform 0.8s var(--ease);
+  }
+  .glass-sheen:hover::after {
+    transform: translateX(120%);
+  }
+
+  .display-title {
+    font-family: var(--font-display), system-ui, sans-serif;
+    letter-spacing: -0.03em;
+    line-height: 0.98;
+  }
+
+  .link-underline {
+    @apply relative inline-flex w-fit items-center gap-1;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.35s var(--ease);
+  }
+  .link-underline:hover {
+    background-size: 100% 1px;
+  }
+}
+
+/* Fond ambiant : orbes de couleur très diffuses pour que le verre capte
+   des teintes subtiles, sans altérer le fond blanc dominant. */
+.ambient {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  pointer-events: none;
+  overflow: hidden;
+}
+.ambient::before,
+.ambient::after {
+  content: "";
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(90px);
+}
+.ambient::before {
+  width: 50vw;
+  height: 50vw;
+  top: -10vw;
+  right: -8vw;
+  background: radial-gradient(circle, rgba(42, 91, 255, 0.2), transparent 68%);
+}
+.ambient::after {
+  width: 46vw;
+  height: 46vw;
+  bottom: -12vw;
+  left: -10vw;
+  background: radial-gradient(circle, rgba(34, 181, 115, 0.19), transparent 68%);
+}
+.ambient span {
+  position: absolute;
+  top: 44%;
+  left: 50%;
+  width: 40vw;
+  height: 40vw;
+  transform: translate(-50%, -50%);
+  border-radius: 9999px;
+  filter: blur(110px);
+  background: radial-gradient(circle, rgba(150, 120, 255, 0.13), transparent 70%);
+}
+/* Deuxième orbe secondaire pour animer le milieu de page */
+.ambient span::before {
+  content: "";
+  position: absolute;
+  top: 120%;
+  left: 30%;
+  width: 32vw;
+  height: 32vw;
+  border-radius: 9999px;
+  filter: blur(110px);
+  background: radial-gradient(circle, rgba(42, 91, 255, 0.12), transparent 70%);
+}
+
+/* Masque de fondu horizontal pour le carousel */
+.edge-fade {
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Grain / bruit léger pour la profondeur premium */
+.grain::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.028;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
