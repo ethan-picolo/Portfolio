@@ -1,10 +1,17 @@
 "use client";
 
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import { useLang, t } from "@/lib/i18n";
 import { featured } from "@/content/site";
 import { Section, SectionLabel } from "./ui";
 import { Reveal } from "./Reveal";
+import landing from "@/assets/projects/compliancezen-landing.webp";
+import features from "@/assets/projects/compliancezen-features.webp";
+import dashboard from "@/assets/projects/compliancezen-dashboard.webp";
+import actions from "@/assets/projects/compliancezen-actions.webp";
+import scanner from "@/assets/projects/compliancezen-scanner.webp";
+
+const shots: Record<string, StaticImageData> = { landing, features, dashboard, actions, scanner };
 
 export function FeaturedProject() {
   const { lang } = useLang();
@@ -46,12 +53,10 @@ export function FeaturedProject() {
       <Reveal delay={0.1}>
         <figure className="glass mt-10 overflow-hidden rounded-card p-2 sm:p-3">
           <Image
-            src={hero.src}
-            width={hero.w}
-            height={hero.h}
+            src={shots[hero.key]}
             alt={`ComplianceZen — ${t(hero.caption, lang)}`}
             className="h-auto w-full rounded-xl border border-line"
-            unoptimized
+            sizes="(min-width: 1024px) 1200px, 100vw"
             priority
           />
         </figure>
@@ -97,15 +102,13 @@ export function FeaturedProject() {
       {/* Galerie de captures */}
       <div className="mt-12 grid gap-4 sm:grid-cols-2">
         {rest.map((s, i) => (
-          <Reveal key={s.src} delay={0.04 * i}>
+          <Reveal key={s.key} delay={0.04 * i}>
             <figure className="glass glass-hover overflow-hidden rounded-card p-2">
               <Image
-                src={s.src}
-                width={s.w}
-                height={s.h}
+                src={shots[s.key]}
                 alt={`ComplianceZen — ${t(s.caption, lang)}`}
                 className="h-auto w-full rounded-xl border border-line"
-                unoptimized
+                sizes="(min-width: 640px) 50vw, 100vw"
               />
               <figcaption className="px-2 pb-1 pt-2 text-xs text-muted">{t(s.caption, lang)}</figcaption>
             </figure>

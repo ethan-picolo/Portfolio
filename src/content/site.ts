@@ -80,7 +80,7 @@ export const contact = {
  * Navigation
  * ──────────────────────────────────────────────────────────── */
 export const nav = {
-  taglineLine1: { fr: "Réseaux & Cybersécurité.", en: "Networks & Cybersecurity." },
+  taglineLine1: { fr: "Cybersécurité & Réseaux.", en: "Cybersecurity & Networks." },
   taglineLine2: { fr: "En recherche de stage.", en: "Open to internships." },
   cta: { fr: "Me contacter", en: "Get in touch" },
   links: [
@@ -98,8 +98,8 @@ export const nav = {
 export const hero = {
   status: { fr: "Disponible — recherche de stage", en: "Available — open to internships" },
   kicker: {
-    fr: "Étudiant en Réseaux & Cybersécurité",
-    en: "Networks & Cybersecurity student",
+    fr: "Étudiant en Cybersécurité & Réseaux",
+    en: "Cybersecurity & Networks student",
   },
   // Le titre est découpé pour l'animation ligne par ligne
   headline: {
@@ -107,8 +107,8 @@ export const hero = {
     en: ["I secure", "networks and", "systems."],
   },
   intro: {
-    fr: "Ethan Picolo — étudiant en Bachelor Réseaux & Cybersécurité à l'EFREI Paris-Panthéon-Assas. Analyse de menaces, réponse à incident et automatisation en Python.",
-    en: "Ethan Picolo — Networks & Cybersecurity Bachelor student at EFREI Paris-Panthéon-Assas. Threat analysis, incident response and Python automation.",
+    fr: "Ethan Picolo — étudiant en Bachelor Cybersécurité & Réseaux à l'EFREI Paris-Panthéon-Assas. Analyse de menaces, réponse à incident et automatisation en Python.",
+    en: "Ethan Picolo — Cybersecurity & Networks Bachelor student at EFREI Paris-Panthéon-Assas. Threat analysis, incident response and Python automation.",
   },
   ctaPrimary: { fr: "Travaillons ensemble", en: "Let's work together" },
   ctaSecondary: { fr: "Voir mes projets", en: "See my projects" },
@@ -126,12 +126,12 @@ export const about = {
   },
   paragraphs: {
     fr: [
-      "Je suis en deuxième année de Bachelor Réseaux & Cybersécurité à l'EFREI Paris-Panthéon-Assas. J'ai effectué un stage au sein du département Sécurité des Systèmes d'Information (SSI) de SPIE ICS, à Cergy, intégré à l'équipe SecOps travaillant avec le SOC.",
+      "Je suis en deuxième année de Bachelor Cybersécurité & Réseaux à l'EFREI Paris-Panthéon-Assas. J'ai effectué un stage au sein du département Sécurité des Systèmes d'Information (SSI) de SPIE France, à Cergy, intégré à l'équipe SecOps travaillant avec le SOC.",
       "Au quotidien, j'y ai travaillé sur l'analyse de courriels suspects et de malware, le traitement d'alertes EDR et SIEM/XDR, la réponse à incident et la gouvernance des accès. J'y ai conçu et développé de façon autonome un script Python d'automatisation de l'analyse de vulnérabilités qui a réduit un traitement de plusieurs heures à quelques minutes.",
       "Rigueur, curiosité et persévérance guident mon travail — des réflexes développés notamment par plusieurs années d'arts martiaux (Penchak Silat, karaté).",
     ],
     en: [
-      "I'm a second-year Networks & Cybersecurity Bachelor student at EFREI Paris-Panthéon-Assas. I completed an internship within SPIE ICS's information-security department (SSI), in Cergy, embedded in the SecOps team working alongside the SOC.",
+      "I'm a second-year Cybersecurity & Networks Bachelor student at EFREI Paris-Panthéon-Assas. I completed an internship within SPIE France's information-security department (SSI), in Cergy, embedded in the SecOps team working alongside the SOC.",
       "Day to day, I worked on suspicious-email and malware analysis, EDR and SIEM/XDR alert handling, incident response and access governance. I independently designed and built a Python vulnerability-analysis automation script that cut a multi-hour manual process down to a few minutes.",
       "Rigor, curiosity and perseverance drive my work — reflexes sharpened by several years of martial arts (Penchak Silat, karate).",
     ],
@@ -319,11 +319,11 @@ export const featured = {
     tools: ["Stripe", "Docker", "ESLint", "Prettier"],
   },
   screenshots: [
-    { src: "/projects/compliancezen-landing.webp", w: 2000, h: 1145, caption: { fr: "Page d'accueil", en: "Landing page" } },
-    { src: "/projects/compliancezen-features.webp", w: 2000, h: 1222, caption: { fr: "Diagnostic guidé", en: "Guided diagnostic" } },
-    { src: "/projects/compliancezen-dashboard.webp", w: 2000, h: 1298, caption: { fr: "Tableau de bord — score de conformité", en: "Dashboard — compliance score" } },
-    { src: "/projects/compliancezen-actions.webp", w: 2000, h: 1399, caption: { fr: "Plan de remédiation", en: "Remediation plan" } },
-    { src: "/projects/compliancezen-scanner.webp", w: 2000, h: 1362, caption: { fr: "Scanner RGPD de site", en: "Website GDPR scanner" } },
+    { key: "landing", caption: { fr: "Page d'accueil", en: "Landing page" } },
+    { key: "features", caption: { fr: "Diagnostic guidé", en: "Guided diagnostic" } },
+    { key: "dashboard", caption: { fr: "Tableau de bord — score de conformité", en: "Dashboard — compliance score" } },
+    { key: "actions", caption: { fr: "Plan de remédiation", en: "Remediation plan" } },
+    { key: "scanner", caption: { fr: "Scanner RGPD de site", en: "Website GDPR scanner" } },
   ],
 };
 
@@ -338,10 +338,10 @@ export const projects: { label: { fr: string; en: string }; items: Project[] } =
       tag: { fr: "Python · Sécurité", en: "Python · Security" },
       title: { fr: "Automatisation d'analyse de vulnérabilités", en: "Vulnerability Analysis Automation" },
       year: "2026",
-      status: { fr: "Stage SPIE ICS — SecOps", en: "SPIE ICS internship — SecOps" },
+      status: { fr: "Stage SPIE France — SecOps", en: "SPIE France internship — SecOps" },
       description: {
-        fr: "Script Python conçu en autonomie pendant mon stage chez SPIE ICS pour automatiser l'analyse de vulnérabilités : enrichissement d'un référentiel CVE via les API NVD (CVSS) et FIRST (EPSS), multithreading, cache local JSON et export Excel de priorisation. Résultat : un traitement de plusieurs heures ramené à quelques minutes.",
-        en: "Python script I built independently during my SPIE ICS internship to automate vulnerability analysis: enriching a CVE dataset via the NVD (CVSS) and FIRST (EPSS) APIs, multithreading, local JSON caching and a prioritized Excel export. Outcome: a multi-hour process reduced to a few minutes.",
+        fr: "Script Python conçu en autonomie pendant mon stage chez SPIE France pour automatiser l'analyse de vulnérabilités : enrichissement d'un référentiel CVE via les API NVD (CVSS) et FIRST (EPSS), multithreading, cache local JSON et export Excel de priorisation. Résultat : un traitement de plusieurs heures ramené à quelques minutes.",
+        en: "Python script I built independently during my SPIE France internship to automate vulnerability analysis: enriching a CVE dataset via the NVD (CVSS) and FIRST (EPSS) APIs, multithreading, local JSON caching and a prioritized Excel export. Outcome: a multi-hour process reduced to a few minutes.",
       },
       tech: ["Python", "NVD API (CVSS)", "FIRST API (EPSS)", "Multithreading", "JSON cache", "Excel export"],
       accent: "#12233A",
@@ -376,7 +376,7 @@ export const timeline: { label: { fr: string; en: string }; items: TimelineItem[
         fr: "Stagiaire Informatique / Analyste Cybersécurité",
         en: "IT Intern / Cybersecurity Analyst",
       },
-      org: "SPIE ICS — SecOps / SSI",
+      org: "SPIE France — SecOps / SSI",
       period: { fr: "Avr. – Juin 2026", en: "Apr – Jun 2026" },
       location: { fr: "Cergy · Sur site", en: "Cergy · On-site" },
       bullets: {
@@ -403,8 +403,8 @@ export const timeline: { label: { fr: string; en: string }; items: TimelineItem[
     {
       kind: "education",
       role: {
-        fr: "Bachelor Réseaux & Cybersécurité",
-        en: "Networks & Cybersecurity Bachelor",
+        fr: "Bachelor Cybersécurité & Réseaux",
+        en: "Cybersecurity & Networks Bachelor",
       },
       org: "EFREI Paris-Panthéon-Assas",
       period: { fr: "En cours · 2ᵉ année", en: "Ongoing · 2nd year" },
@@ -534,8 +534,8 @@ export const faq: { label: { fr: string; en: string }; items: FaqItem[] } = {
  * ──────────────────────────────────────────────────────────── */
 export const footer = {
   tagline: {
-    fr: "Réseaux & Cybersécurité — construisons des systèmes sûrs.",
-    en: "Networks & Cybersecurity — let's build secure systems.",
+    fr: "Cybersécurité & Réseaux — construisons des systèmes sûrs.",
+    en: "Cybersecurity & Networks — let's build secure systems.",
   },
   builtWith: { fr: "Conçu & développé par Ethan Picolo", en: "Designed & built by Ethan Picolo" },
   backToTop: { fr: "Haut de page", en: "Back to top" },

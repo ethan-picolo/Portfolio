@@ -21,11 +21,11 @@ const SITE_URL = "https://ethan-picolo.github.io/Portfolio"; // TODO — remplac
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Ethan Picolo — Réseaux & Cybersécurité",
+    default: "Ethan Picolo — Cybersécurité & Réseaux",
     template: "%s · Ethan Picolo",
   },
   description:
-    "Ethan Picolo — étudiant en Bachelor Réseaux & Cybersécurité à l'EFREI Paris-Panthéon-Assas. Analyse de menaces, réponse à incident, automatisation Python. En recherche de stage.",
+    "Ethan Picolo — étudiant en Bachelor Cybersécurité & Réseaux à l'EFREI Paris-Panthéon-Assas. Analyse de menaces, réponse à incident, automatisation Python. En recherche de stage.",
   keywords: [
     "Ethan Picolo",
     "cybersécurité",
@@ -46,16 +46,16 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     alternateLocale: "en_US",
     url: SITE_URL,
-    title: "Ethan Picolo — Réseaux & Cybersécurité",
+    title: "Ethan Picolo — Cybersécurité & Réseaux",
     description:
-      "Étudiant en Réseaux & Cybersécurité à l'EFREI. Analyse de menaces, réponse à incident, automatisation Python.",
+      "Étudiant en Cybersécurité & Réseaux à l'EFREI. Analyse de menaces, réponse à incident, automatisation Python.",
     siteName: "Ethan Picolo",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ethan Picolo — Réseaux & Cybersécurité",
+    title: "Ethan Picolo — Cybersécurité & Réseaux",
     description:
-      "Étudiant en Réseaux & Cybersécurité à l'EFREI. Analyse de menaces, réponse à incident, automatisation Python.",
+      "Étudiant en Cybersécurité & Réseaux à l'EFREI. Analyse de menaces, réponse à incident, automatisation Python.",
   },
   robots: { index: true, follow: true },
   icons: {

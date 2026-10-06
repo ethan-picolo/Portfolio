@@ -15,7 +15,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Ethan Picolo",
-  jobTitle: "Étudiant en Réseaux & Cybersécurité",
+  jobTitle: "Étudiant en Cybersécurité & Réseaux",
   email: `mailto:${contact.email}`,
   url: "https://ethan-picolo.github.io/Portfolio",
   address: { "@type": "PostalAddress", addressLocality: "Bry-sur-Marne", addressCountry: "FR" },
