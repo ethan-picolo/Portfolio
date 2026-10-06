@@ -50,12 +50,21 @@ export const metadata: Metadata = {
     description:
       "Étudiant en Cybersécurité & Réseaux à l'EFREI. Analyse de menaces, réponse à incident, automatisation Python.",
     siteName: "Ethan Picolo",
+    images: [
+      {
+        url: `${SITE_URL}/og.png`,
+        width: 1200,
+        height: 630,
+        alt: "Ethan Picolo — Cybersécurité & Réseaux",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Ethan Picolo — Cybersécurité & Réseaux",
     description:
       "Étudiant en Cybersécurité & Réseaux à l'EFREI. Analyse de menaces, réponse à incident, automatisation Python.",
+    images: [`${SITE_URL}/og.png`],
   },
   robots: { index: true, follow: true },
   icons: {
