@@ -246,35 +246,93 @@ export const skills: { label: { fr: string; en: string }; groups: SkillGroup[] }
 };
 
 /* ────────────────────────────────────────────────────────────
+ * Projet phare — ComplianceZen (étude de cas + vraies captures)
+ * ──────────────────────────────────────────────────────────── */
+export const featured = {
+  label: { fr: "Projet phare", en: "Featured project" },
+  name: "ComplianceZen",
+  tag: { fr: "SaaS · RGPD", en: "SaaS · GDPR" },
+  status: { fr: "En développement", en: "In development" },
+  tagline: {
+    fr: "La conformité RGPD, sans y passer vos soirées.",
+    en: "GDPR compliance, without spending your evenings on it.",
+  },
+  intro: {
+    fr: "ComplianceZen est une plateforme SaaS B2B que je conçois et développe de bout en bout pour aider les TPE et PME françaises à se mettre en conformité avec le RGPD — un sujet complexe, chronophage et souvent sans juriste ni DPO en interne.",
+    en: "ComplianceZen is a B2B SaaS platform I design and build end-to-end to help French small businesses become GDPR-compliant — a complex, time-consuming topic they usually tackle without a lawyer or DPO.",
+  },
+  problem: {
+    fr: "La mise en conformité RGPD est obligatoire mais obscure : jargon juridique, documents à produire, obligations éparpillées. Les petites structures n'ont ni le temps ni les ressources pour s'y retrouver.",
+    en: "GDPR compliance is mandatory yet opaque: legal jargon, mandatory documents, scattered obligations. Small structures have neither the time nor the resources to navigate it.",
+  },
+  solution: {
+    fr: "Centraliser toute la démarche au même endroit : un diagnostic guidé sans jargon, la génération automatique des documents obligatoires, un plan d'action priorisé, un scanner de site, et un suivi du score de conformité en temps réel.",
+    en: "Bring the whole process into one place: a jargon-free guided diagnostic, automatic generation of the mandatory documents, a prioritized action plan, a website scanner, and real-time compliance-score tracking.",
+  },
+  features: [
+    {
+      title: { fr: "Diagnostic guidé", en: "Guided diagnostic" },
+      desc: {
+        fr: "Un questionnaire sans jargon qui calcule un score /100 et liste les points à traiter par ordre d'importance.",
+        en: "A jargon-free questionnaire that computes a /100 score and lists what to fix, ranked by importance.",
+      },
+    },
+    {
+      title: { fr: "Registre des traitements", en: "Processing registry" },
+      desc: {
+        fr: "Le registre obligatoire (article 30) généré automatiquement et exportable.",
+        en: "The mandatory registry (Article 30) generated automatically and exportable.",
+      },
+    },
+    {
+      title: { fr: "Politique de confidentialité", en: "Privacy policy" },
+      desc: {
+        fr: "Un texte conforme CNIL, personnalisé et prêt à publier sur le site.",
+        en: "A CNIL-compliant, customized policy ready to publish on the website.",
+      },
+    },
+    {
+      title: { fr: "Plan de remédiation", en: "Remediation plan" },
+      desc: {
+        fr: "Les actions critiques et importantes priorisées, avec suivi de l'avancement.",
+        en: "Critical and important actions prioritized, with progress tracking.",
+      },
+    },
+    {
+      title: { fr: "Scanner de site", en: "Website scanner" },
+      desc: {
+        fr: "Analyse RGPD d'un site web en quelques secondes (politique, cookies, HTTPS, trackers…).",
+        en: "A few-second GDPR scan of a website (policy, cookies, HTTPS, trackers…).",
+      },
+    },
+    {
+      title: { fr: "Abonnement & facturation", en: "Subscription & billing" },
+      desc: {
+        fr: "Gestion des comptes et de la facturation par abonnement via Stripe.",
+        en: "Account management and subscription billing via Stripe.",
+      },
+    },
+  ],
+  stack: {
+    frontend: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    backend: ["NestJS", "Prisma", "PostgreSQL", "JWT / Passport"],
+    tools: ["Stripe", "Docker", "ESLint", "Prettier"],
+  },
+  screenshots: [
+    { src: "/projects/compliancezen-landing.webp", w: 2000, h: 1145, caption: { fr: "Page d'accueil", en: "Landing page" } },
+    { src: "/projects/compliancezen-features.webp", w: 2000, h: 1222, caption: { fr: "Diagnostic guidé", en: "Guided diagnostic" } },
+    { src: "/projects/compliancezen-dashboard.webp", w: 2000, h: 1298, caption: { fr: "Tableau de bord — score de conformité", en: "Dashboard — compliance score" } },
+    { src: "/projects/compliancezen-actions.webp", w: 2000, h: 1399, caption: { fr: "Plan de remédiation", en: "Remediation plan" } },
+    { src: "/projects/compliancezen-scanner.webp", w: 2000, h: 1362, caption: { fr: "Scanner RGPD de site", en: "Website GDPR scanner" } },
+  ],
+};
+
+/* ────────────────────────────────────────────────────────────
  * Projets (carousel)
  * ──────────────────────────────────────────────────────────── */
 export const projects: { label: { fr: string; en: string }; items: Project[] } = {
-  label: { fr: "Projets", en: "Projects" },
+  label: { fr: "Autres projets", en: "Other projects" },
   items: [
-    {
-      slug: "compliancezen",
-      tag: { fr: "SaaS · RGPD", en: "SaaS · GDPR" },
-      title: "ComplianceZen",
-      year: "2026",
-      status: { fr: "En développement", en: "In development" },
-      description: {
-        fr: "Plateforme SaaS B2B dédiée à la mise en conformité RGPD des TPE et PME françaises. L'application automatise la génération du registre des traitements et des politiques de confidentialité, calcule un score de conformité en temps réel, intègre un scanner de diagnostic (dont un scan de nom de domaine) et gère la facturation par abonnement.",
-        en: "B2B SaaS platform for GDPR compliance aimed at French small businesses. It automates the generation of processing registries and privacy policies, computes a real-time compliance score, includes a diagnostic scanner (with domain-name scanning) and handles subscription billing.",
-      },
-      tech: [
-        "Next.js",
-        "React",
-        "TypeScript",
-        "Tailwind CSS",
-        "NestJS",
-        "Prisma",
-        "JWT",
-        "Stripe",
-        "Docker",
-      ],
-      accent: "#0B0B0C",
-      links: [],
-    },
     {
       slug: "vuln-automation",
       tag: { fr: "Python · Sécurité", en: "Python · Security" },

@@ -41,7 +41,7 @@ export function Projects() {
   };
 
   return (
-    <section id="projects" className="scroll-mt-28 overflow-hidden py-20 sm:py-28">
+    <section id="other-projects" className="scroll-mt-28 overflow-hidden py-20 sm:py-28">
       <div className="mx-auto w-full max-w-page px-5 sm:px-8">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
@@ -50,7 +50,7 @@ export function Projects() {
             </Reveal>
             <Reveal delay={0.05}>
               <h2 className="display-title mt-6 text-3xl font-semibold text-ink sm:text-4xl">
-                {lang === "fr" ? "Réalisations récentes" : "Recent work"}
+                {lang === "fr" ? "Autres réalisations" : "More work"}
               </h2>
             </Reveal>
           </div>
