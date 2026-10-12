@@ -54,7 +54,7 @@ export function FeaturedProject() {
         <figure className="glass mt-10 overflow-hidden rounded-card p-2 sm:p-3">
           <Image
             src={shots[hero.key]}
-            alt={`ComplianceZen — ${t(hero.caption, lang)}`}
+            alt={`ComplianceZen · ${t(hero.caption, lang)}`}
             className="h-auto w-full rounded-xl border border-line"
             sizes="(min-width: 1024px) 1200px, 100vw"
             priority
@@ -106,7 +106,7 @@ export function FeaturedProject() {
             <figure className="glass glass-hover overflow-hidden rounded-card p-2">
               <Image
                 src={shots[s.key]}
-                alt={`ComplianceZen — ${t(s.caption, lang)}`}
+                alt={`ComplianceZen · ${t(s.caption, lang)}`}
                 className="h-auto w-full rounded-xl border border-line"
                 sizes="(min-width: 640px) 50vw, 100vw"
               />

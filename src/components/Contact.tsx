@@ -143,7 +143,7 @@ function ContactForm({ lang }: { lang: "fr" | "en" }) {
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const subject = encodeURIComponent(
-      lang === "fr" ? `Prise de contact — ${name}` : `Contact request — ${name}`
+      lang === "fr" ? `Prise de contact de ${name}` : `Contact request from ${name}`
     );
     const body = encodeURIComponent(
       `${message}\n\n${lang === "fr" ? "De" : "From"}: ${name}${email ? ` (${email})` : ""}`

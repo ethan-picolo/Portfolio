@@ -69,7 +69,7 @@ function CodeVisual() {
     { indent: 1, tokens: [["c2", "epss = "], ["c3", "fetch"], ["c2", "(FIRST_API, cve)"]] },
     { indent: 1, tokens: [["c1", "return"], ["c2", " merge(nvd, epss)"]] },
     { indent: 0, tokens: [] },
-    { indent: 0, tokens: [["c4", "# "], ["c4", "~heures → minutes"]] },
+    { indent: 0, tokens: [["c4", "# "], ["c4", "de plusieurs heures a quelques minutes"]] },
   ];
   return (
     <div className="relative h-full w-full overflow-hidden rounded-2xl bg-[#0e1a2b] p-5 font-mono text-[13px] leading-6">

@@ -96,7 +96,7 @@ export const nav = {
  * Hero
  * ──────────────────────────────────────────────────────────── */
 export const hero = {
-  status: { fr: "Disponible — recherche de stage", en: "Available — open to internships" },
+  status: { fr: "Disponible pour un stage", en: "Available for an internship" },
   kicker: {
     fr: "Étudiant en Cybersécurité & Réseaux",
     en: "Cybersecurity & Networks student",
@@ -107,8 +107,8 @@ export const hero = {
     en: ["I secure", "networks and", "systems."],
   },
   intro: {
-    fr: "Ethan Picolo — étudiant en Bachelor Cybersécurité & Réseaux à l'EFREI Paris-Panthéon-Assas. Analyse de menaces, réponse à incident et automatisation en Python.",
-    en: "Ethan Picolo — Cybersecurity & Networks Bachelor student at EFREI Paris-Panthéon-Assas. Threat analysis, incident response and Python automation.",
+    fr: "Ethan Picolo, étudiant en Bachelor Cybersécurité & Réseaux à l'EFREI Paris-Panthéon-Assas. Analyse de menaces, réponse à incident et automatisation en Python.",
+    en: "Ethan Picolo, Cybersecurity & Networks Bachelor student at EFREI Paris-Panthéon-Assas. Threat analysis, incident response and Python automation.",
   },
   ctaPrimary: { fr: "Travaillons ensemble", en: "Let's work together" },
   ctaSecondary: { fr: "Voir mes projets", en: "See my projects" },
@@ -128,12 +128,12 @@ export const about = {
     fr: [
       "Je suis en deuxième année de Bachelor Cybersécurité & Réseaux à l'EFREI Paris-Panthéon-Assas. J'ai effectué un stage au sein du département Sécurité des Systèmes d'Information (SSI) de SPIE France, à Cergy, intégré à l'équipe SecOps travaillant avec le SOC.",
       "Au quotidien, j'y ai travaillé sur l'analyse de courriels suspects et de malware, le traitement d'alertes EDR et SIEM/XDR, la réponse à incident et la gouvernance des accès. J'y ai conçu et développé de façon autonome un script Python d'automatisation de l'analyse de vulnérabilités qui a réduit un traitement de plusieurs heures à quelques minutes.",
-      "Rigueur, curiosité et persévérance guident mon travail — des réflexes développés notamment par plusieurs années d'arts martiaux (Penchak Silat, karaté).",
+      "Rigueur, curiosité et persévérance guident mon travail. Des réflexes développés notamment par plusieurs années d'arts martiaux (Penchak Silat, karaté).",
     ],
     en: [
       "I'm a second-year Cybersecurity & Networks Bachelor student at EFREI Paris-Panthéon-Assas. I completed an internship within SPIE France's information-security department (SSI), in Cergy, embedded in the SecOps team working alongside the SOC.",
       "Day to day, I worked on suspicious-email and malware analysis, EDR and SIEM/XDR alert handling, incident response and access governance. I independently designed and built a Python vulnerability-analysis automation script that cut a multi-hour manual process down to a few minutes.",
-      "Rigor, curiosity and perseverance drive my work — reflexes sharpened by several years of martial arts (Penchak Silat, karate).",
+      "Rigor, curiosity and perseverance drive my work. Reflexes sharpened by several years of martial arts (Penchak Silat, karate).",
     ],
   },
   facts: [
@@ -258,8 +258,8 @@ export const featured = {
     en: "GDPR compliance, without spending your evenings on it.",
   },
   intro: {
-    fr: "ComplianceZen est une plateforme SaaS B2B que je conçois et développe de bout en bout pour aider les TPE et PME françaises à se mettre en conformité avec le RGPD — un sujet complexe, chronophage et souvent sans juriste ni DPO en interne.",
-    en: "ComplianceZen is a B2B SaaS platform I design and build end-to-end to help French small businesses become GDPR-compliant — a complex, time-consuming topic they usually tackle without a lawyer or DPO.",
+    fr: "ComplianceZen est une plateforme SaaS B2B que je conçois et développe de bout en bout pour aider les TPE et PME françaises à se mettre en conformité avec le RGPD, un sujet complexe et chronophage qu'elles abordent souvent sans juriste ni DPO en interne.",
+    en: "ComplianceZen is a B2B SaaS platform I design and build end-to-end to help French small businesses become GDPR-compliant, a complex and time-consuming topic they usually tackle without a lawyer or DPO.",
   },
   problem: {
     fr: "La mise en conformité RGPD est obligatoire mais obscure : jargon juridique, documents à produire, obligations éparpillées. Les petites structures n'ont ni le temps ni les ressources pour s'y retrouver.",
@@ -321,7 +321,7 @@ export const featured = {
   screenshots: [
     { key: "landing", caption: { fr: "Page d'accueil", en: "Landing page" } },
     { key: "features", caption: { fr: "Diagnostic guidé", en: "Guided diagnostic" } },
-    { key: "dashboard", caption: { fr: "Tableau de bord — score de conformité", en: "Dashboard — compliance score" } },
+    { key: "dashboard", caption: { fr: "Tableau de bord de conformité", en: "Compliance dashboard" } },
     { key: "actions", caption: { fr: "Plan de remédiation", en: "Remediation plan" } },
     { key: "scanner", caption: { fr: "Scanner RGPD de site", en: "Website GDPR scanner" } },
   ],
@@ -338,7 +338,7 @@ export const projects: { label: { fr: string; en: string }; items: Project[] } =
       tag: { fr: "Python · Sécurité", en: "Python · Security" },
       title: { fr: "Automatisation d'analyse de vulnérabilités", en: "Vulnerability Analysis Automation" },
       year: "2026",
-      status: { fr: "Stage SPIE France — SecOps", en: "SPIE France internship — SecOps" },
+      status: { fr: "Stage SPIE France · SecOps", en: "SPIE France internship · SecOps" },
       description: {
         fr: "Script Python conçu en autonomie pendant mon stage chez SPIE France pour automatiser l'analyse de vulnérabilités : enrichissement d'un référentiel CVE via les API NVD (CVSS) et FIRST (EPSS), multithreading, cache local JSON et export Excel de priorisation. Résultat : un traitement de plusieurs heures ramené à quelques minutes.",
         en: "Python script I built independently during my SPIE France internship to automate vulnerability analysis: enriching a CVE dataset via the NVD (CVSS) and FIRST (EPSS) APIs, multithreading, local JSON caching and a prioritized Excel export. Outcome: a multi-hour process reduced to a few minutes.",
@@ -376,7 +376,7 @@ export const timeline: { label: { fr: string; en: string }; items: TimelineItem[
         fr: "Stagiaire Informatique / Analyste Cybersécurité",
         en: "IT Intern / Cybersecurity Analyst",
       },
-      org: "SPIE France — SecOps / SSI",
+      org: "SPIE France · SecOps / SSI",
       period: { fr: "Avr. – Juin 2026", en: "Apr – Jun 2026" },
       location: { fr: "Cergy · Sur site", en: "Cergy · On-site" },
       bullets: {
@@ -385,7 +385,7 @@ export const timeline: { label: { fr: string; en: string }; items: TimelineItem[
           "Traitement d'alertes EDR et SIEM/XDR : chaîne d'exécution, vérification des hash, règles de détection, croisement des IOC et recherche de propagation.",
           "Réponse à incident : isolation du poste, documentation des IOC et de la chronologie, transmission à l'équipe de remédiation.",
           "Gouvernance des accès : audit des connexions VPN tierces et des demandes de droits admin, dans le respect du moindre privilège.",
-          "Script Python d'automatisation des vulnérabilités : enrichissement CVE via les API NVD (CVSS) et FIRST (EPSS), multithreading, cache JSON et export Excel. Heures → minutes.",
+          "Script Python d'automatisation des vulnérabilités : enrichissement CVE via les API NVD (CVSS) et FIRST (EPSS), multithreading, cache JSON et export Excel. Plusieurs heures de traitement ramenées à quelques minutes.",
           "Tâches système : installation d'un serveur Windows Server (RAID, IPAM, jonction Active Directory), supervision et sauvegardes.",
           "Outils : SEKOIA.IO (SIEM/XDR), EDR, VirusTotal, Joe Sandbox, URLScan.io, EasyVista, Active Directory.",
         ],
@@ -394,7 +394,7 @@ export const timeline: { label: { fr: string; en: string }; items: TimelineItem[
           "EDR and SIEM/XDR alert handling: execution chains, hash verification, detection rules, IOC correlation and propagation hunting.",
           "Incident response: host isolation, IOC and timeline documentation, handover to the remediation team.",
           "Access governance: auditing third-party VPN connections and local-admin requests, following least privilege.",
-          "Python vulnerability-automation script: CVE enrichment via the NVD (CVSS) and FIRST (EPSS) APIs, multithreading, JSON caching and Excel export. Hours → minutes.",
+          "Python vulnerability-automation script: CVE enrichment via the NVD (CVSS) and FIRST (EPSS) APIs, multithreading, JSON caching and Excel export. Hours of work cut to minutes.",
           "Systems tasks: installing a physical Windows Server (RAID, IPAM, Active Directory join), monitoring and backups.",
           "Tooling: SEKOIA.IO (SIEM/XDR), EDR, VirusTotal, Joe Sandbox, URLScan.io, EasyVista, Active Directory.",
         ],
@@ -422,8 +422,8 @@ export const timeline: { label: { fr: string; en: string }; items: TimelineItem[
     {
       kind: "experience",
       role: {
-        fr: "Stagiaire étudiant — Découverte",
-        en: "Student Intern — Discovery",
+        fr: "Stagiaire étudiant · Découverte",
+        en: "Student Intern · Discovery",
       },
       org: "SPIE ICS",
       period: { fr: "Déc. 2021", en: "Dec 2021" },
@@ -440,8 +440,8 @@ export const timeline: { label: { fr: string; en: string }; items: TimelineItem[
     {
       kind: "education",
       role: {
-        fr: "Baccalauréat général — NSI & Mathématiques",
-        en: "French Baccalauréat — Computer Science & Mathematics",
+        fr: "Baccalauréat général · NSI & Mathématiques",
+        en: "French Baccalauréat · Computer Science & Mathematics",
       },
       org: "Lycée Polyvalent Louis Armand",
       period: { fr: "Sept. 2022 – Juil. 2025", en: "Sep 2022 – Jul 2025" },
@@ -463,8 +463,8 @@ export const certifications: { label: { fr: string; en: string }; items: Certifi
     { name: "Network Defense", issuer: "Cisco Networking Academy", date: { fr: "Juin 2026", en: "Jun 2026" } },
     { name: "Cyber Threat Management", issuer: "Cisco Networking Academy", date: { fr: "Juin 2026", en: "Jun 2026" } },
     { name: "Networking Basics", issuer: "Cisco Networking Academy", date: { fr: "Nov. 2025", en: "Nov 2025" } },
-    { name: "Introduction à la Cybersécurité", issuer: "Cisco Networking Academy", date: { fr: "—", en: "—" } },
-    { name: "Python Essentials 1", issuer: "Cisco Networking Academy", date: { fr: "—", en: "—" } },
+    { name: "Introduction à la Cybersécurité", issuer: "Cisco Networking Academy", date: { fr: "", en: "" } },
+    { name: "Python Essentials 1", issuer: "Cisco Networking Academy", date: { fr: "", en: "" } },
     { name: "Claude Platform 101", issuer: "Anthropic", date: { fr: "Août 2026", en: "Aug 2026" } },
     { name: "Claude Code 101", issuer: "Anthropic", date: { fr: "Juil. 2026", en: "Jul 2026" } },
     { name: "Claude 101", issuer: "Anthropic", date: { fr: "Juil. 2026", en: "Jul 2026" } },
@@ -534,8 +534,8 @@ export const faq: { label: { fr: string; en: string }; items: FaqItem[] } = {
  * ──────────────────────────────────────────────────────────── */
 export const footer = {
   tagline: {
-    fr: "Cybersécurité & Réseaux — construisons des systèmes sûrs.",
-    en: "Cybersecurity & Networks — let's build secure systems.",
+    fr: "Cybersécurité & Réseaux. Construisons des systèmes sûrs.",
+    en: "Cybersecurity & Networks. Let's build secure systems.",
   },
   builtWith: { fr: "Conçu & développé par Ethan Picolo", en: "Designed & built by Ethan Picolo" },
   backToTop: { fr: "Haut de page", en: "Back to top" },

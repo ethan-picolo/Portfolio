@@ -21,11 +21,11 @@ const SITE_URL = "https://ethan-picolo.github.io/Portfolio"; // TODO — remplac
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Ethan Picolo — Cybersécurité & Réseaux",
+    default: "Ethan Picolo · Cybersécurité & Réseaux",
     template: "%s · Ethan Picolo",
   },
   description:
-    "Ethan Picolo — étudiant en Bachelor Cybersécurité & Réseaux à l'EFREI Paris-Panthéon-Assas. Analyse de menaces, réponse à incident, automatisation Python. En recherche de stage.",
+    "Ethan Picolo, étudiant en Bachelor Cybersécurité & Réseaux à l'EFREI Paris-Panthéon-Assas. Analyse de menaces, réponse à incident, automatisation Python. En recherche de stage.",
   keywords: [
     "Ethan Picolo",
     "cybersécurité",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     alternateLocale: "en_US",
     url: SITE_URL,
-    title: "Ethan Picolo — Cybersécurité & Réseaux",
+    title: "Ethan Picolo · Cybersécurité & Réseaux",
     description:
       "Étudiant en Cybersécurité & Réseaux à l'EFREI. Analyse de menaces, réponse à incident, automatisation Python.",
     siteName: "Ethan Picolo",
@@ -55,13 +55,13 @@ export const metadata: Metadata = {
         url: `${SITE_URL}/og.png`,
         width: 1200,
         height: 630,
-        alt: "Ethan Picolo — Cybersécurité & Réseaux",
+        alt: "Ethan Picolo · Cybersécurité & Réseaux",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ethan Picolo — Cybersécurité & Réseaux",
+    title: "Ethan Picolo · Cybersécurité & Réseaux",
     description:
       "Étudiant en Cybersécurité & Réseaux à l'EFREI. Analyse de menaces, réponse à incident, automatisation Python.",
     images: [`${SITE_URL}/og.png`],

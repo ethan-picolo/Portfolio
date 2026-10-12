@@ -38,7 +38,7 @@ export function Nav() {
       >
         <div className="flex items-center gap-2 p-1.5 pl-2.5">
           {/* Logo + tagline */}
-          <a href="#top" className="group flex min-w-0 items-center gap-2.5" aria-label="Ethan Picolo — accueil">
+          <a href="#top" className="group flex min-w-0 items-center gap-2.5" aria-label="Ethan Picolo, accueil">
             <Monogram className="h-9 w-9 shrink-0" />
             <span className="hidden min-w-0 flex-col leading-tight xl:flex">
               <span className="truncate text-[13px] font-medium text-ink">{t(nav.taglineLine1, lang)}</span>
